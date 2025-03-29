@@ -1,0 +1,184 @@
+--------> DATASET NUMBER - 1, IMBD
+
+Model name: GradientBoostingClassifier()
+              precision    recall  f1-score   support
+
+    romantic       0.72      0.65      0.68        20
+    thriller       0.68      0.75      0.71        20
+
+    accuracy                           0.70        40
+   macro avg       0.70      0.70      0.70        40
+weighted avg       0.70      0.70      0.70        40
+
+
+Confusion matrix:
+[[13  7]
+ [ 5 15]]
+
+Model name: AdaBoostClassifier(algorithm='SAMME')
+              precision    recall  f1-score   support
+
+    romantic       0.72      0.65      0.68        20
+    thriller       0.68      0.75      0.71        20
+
+    accuracy                           0.70        40
+   macro avg       0.70      0.70      0.70        40
+weighted avg       0.70      0.70      0.70        40
+
+
+Confusion matrix:
+[[13  7]
+ [ 5 15]]
+
+Model name: LogisticRegression()
+              precision    recall  f1-score   support
+
+    romantic       0.74      0.85      0.79        20
+    thriller       0.82      0.70      0.76        20
+
+    accuracy                           0.78        40
+   macro avg       0.78      0.77      0.77        40
+weighted avg       0.78      0.78      0.77        40
+
+
+Confusion matrix:
+[[17  3]
+ [ 6 14]]
+
+Model name: DecisionTreeClassifier()
+              precision    recall  f1-score   support
+
+    romantic       0.62      0.65      0.63        20
+    thriller       0.63      0.60      0.62        20
+
+    accuracy                           0.62        40
+   macro avg       0.63      0.62      0.62        40
+weighted avg       0.63      0.62      0.62        40
+
+
+Confusion matrix:
+[[13  7]
+ [ 8 12]]
+
+Model name: MultinomialNB()
+              precision    recall  f1-score   support
+
+    romantic       0.72      0.90      0.80        20
+    thriller       0.87      0.65      0.74        20
+
+    accuracy                           0.78        40
+   macro avg       0.79      0.78      0.77        40
+weighted avg       0.79      0.78      0.77        40
+
+
+Confusion matrix:
+[[18  2]
+ [ 7 13]]
+
+Model name: RandomForestClassifier()
+              precision    recall  f1-score   support
+
+    romantic       0.70      0.80      0.74        20
+    thriller       0.76      0.65      0.70        20
+
+    accuracy                           0.72        40
+   macro avg       0.73      0.73      0.72        40
+weighted avg       0.73      0.72      0.72        40
+
+
+Confusion matrix:
+[[16  4]
+ [ 7 13]]
+
+--------> DATASET NUMBER - 2, ROTTEN TOMATOES
+
+Model name: GradientBoostingClassifier()
+              precision    recall  f1-score   support
+
+    romantic       0.86      0.60      0.71        20
+    thriller       0.69      0.90      0.78        20
+
+    accuracy                           0.75        40
+   macro avg       0.77      0.75      0.74        40
+weighted avg       0.77      0.75      0.74        40
+
+
+Confusion matrix:
+[[12  8]
+ [ 2 18]]
+
+Model name: AdaBoostClassifier(algorithm='SAMME')
+              precision    recall  f1-score   support
+
+    romantic       0.78      0.70      0.74        20
+    thriller       0.73      0.80      0.76        20
+
+    accuracy                           0.75        40
+   macro avg       0.75      0.75      0.75        40
+weighted avg       0.75      0.75      0.75        40
+
+
+Confusion matrix:
+[[14  6]
+ [ 4 16]]
+
+Model name: LogisticRegression()
+              precision    recall  f1-score   support
+
+    romantic       0.90      0.95      0.93        20
+    thriller       0.95      0.90      0.92        20
+
+    accuracy                           0.93        40
+   macro avg       0.93      0.93      0.92        40
+weighted avg       0.93      0.93      0.92        40
+
+
+Confusion matrix:
+[[19  1]
+ [ 2 18]]
+
+Model name: DecisionTreeClassifier()
+              precision    recall  f1-score   support
+
+    romantic       0.79      0.55      0.65        20
+    thriller       0.65      0.85      0.74        20
+
+    accuracy                           0.70        40
+   macro avg       0.72      0.70      0.69        40
+weighted avg       0.72      0.70      0.69        40
+
+
+Confusion matrix:
+[[11  9]
+ [ 3 17]]
+
+Model name: MultinomialNB()
+              precision    recall  f1-score   support
+
+    romantic       0.95      0.95      0.95        20
+    thriller       0.95      0.95      0.95        20
+
+    accuracy                           0.95        40
+   macro avg       0.95      0.95      0.95        40
+weighted avg       0.95      0.95      0.95        40
+
+
+Confusion matrix:
+[[19  1]
+ [ 1 19]]
+
+Model name: RandomForestClassifier()
+              precision    recall  f1-score   support
+
+    romantic       0.88      0.75      0.81        20
+    thriller       0.78      0.90      0.84        20
+
+    accuracy                           0.82        40
+   macro avg       0.83      0.82      0.82        40
+weighted avg       0.83      0.82      0.82        40
+
+
+Confusion matrix:
+[[15  5]
+ [ 2 18]]
+
