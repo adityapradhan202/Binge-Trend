@@ -58,7 +58,6 @@ def data_tester(models, data_sets, report_path,
     
     Returns:
         None: Returns nothing, but generates text files of report at the provided path
-
     """
 
     if vec_type == "count":
@@ -125,7 +124,6 @@ def data_tester(models, data_sets, report_path,
 
 if __name__ == "__main__":
     # Only imbd and rotten tomatoes
-    # Because synthetic data by GPT is overfitting
     df1, df2 = lower_words_synopsis([df1, df2])
     data_tester(
         report_path="./reports/final_report_movies.txt",
