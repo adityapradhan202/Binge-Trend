@@ -160,10 +160,6 @@ def pairs_train_eval(y, data, label_col, synop_col, models=None,
 
     return final_res
 
-def train_fine_tune(models,):
-    """Quickle trains and evaluates the base form of models, and also fine tunes them, if the fine tuned models are better than the base form of models, then it returns the fine tuned models, otherwise returns the base form of models."""
-    pass
-
 
 if __name__ == "__main__":
     pass
