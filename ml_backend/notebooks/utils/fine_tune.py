@@ -21,7 +21,8 @@ class FineTuneError(Exception):
 
 # Train and Fine tune if needed
 # This for tfidf or countvectorizer method only
-def train_fine_tune(models, df, X, y, params_list, tsize=0.20, rstate=45, vec_type="tfidf", search_type="grid"):
+def train_fine_tune(models, df, X, y, params_list, tsize=0.20, rstate=45, vec_type="tfidf",
+                    search_type="grid", random_niter=4):
     """
     Trains specific machine learning algorithms, also fine tunes the algorithms, and if the fine tuned version of the algorithms peforms better then it returns those models, otherwise returns the base version of the algorithms.
     Args:
@@ -34,6 +35,7 @@ def train_fine_tune(models, df, X, y, params_list, tsize=0.20, rstate=45, vec_ty
         rstate: random state for train test split
         vec_type: default is "tfidf", for TfIdfVectorizer, and "count" for CountVectorizer
         search_type: default is "grid", for GridSearchCV, and "random" for "RandomizedSearchCv"
+        random_niter=4: n_iter value for RandomizedSearchCV. Set this when search_type is set "random"
     Returns:
         filt_models: best models out of both the base algorithms and fine tuned algorithms
     """
@@ -91,14 +93,15 @@ def train_fine_tune(models, df, X, y, params_list, tsize=0.20, rstate=45, vec_ty
         return # Terminate
     
     print("\nPlease wait for some time, search technique is finding the best hyper parameters...")
-    print(f"\n\n---> Tune models:")
+    print(f"\n\n---> Tuning models:")
     for ind, model in enumerate(models):
         if search_type == "grid":
             model_tune = GridSearchCV(
                 estimator=model,
                 param_grid=params_list[ind],
                 scoring="accuracy",
-                n_jobs=4, cv=5
+                n_jobs=4, cv=5,
+
             )
         elif search_type == "random":
             model_tune = RandomizedSearchCV(
@@ -107,7 +110,7 @@ def train_fine_tune(models, df, X, y, params_list, tsize=0.20, rstate=45, vec_ty
                 scoring="accuracy",
                 cv=5,
                 n_jobs=4,
-                n_iter=10
+                n_iter=random_niter
             )
                
         model_tune.fit(spX_train, y_train)
@@ -141,8 +144,8 @@ if __name__ == "__main__":
     df = df[(df["label"]=="romantic") | (df["label"]=="horror")]
     filt_models = train_fine_tune(
         models=[
-            AdaBoostClassifier(algorithm="SAMME"),
-            LogisticRegression(max_iter=10000)
+            AdaBoostClassifier(algorithm="SAMME", random_state=42),
+            LogisticRegression(max_iter=10000, random_state=42)
         ],
         df=df,
         X="synopsis", y="label",
@@ -160,16 +163,14 @@ if __name__ == "__main__":
         tsize=0.20,
         rstate=45,
         vec_type="tfidf",
-        search_type="grid"   
+        search_type="random",
+        random_niter=4
     )
 
     print("\nThese are the filtered models:")
-    print(filt_models)
-    print("\nThese are the best params of the model:")
-    for model in filt_models:
-        print(f"Model name: {model}")
-        print(f"Best params:\n{model.get_params()}\n")
-
+    for ind, mod in enumerate(filt_models):
+        print(f"Here's model number - {ind + 1}")
+        print(mod)
     
 
     
