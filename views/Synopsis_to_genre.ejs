@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Synopsis Genre Predictor</title>
+  <link rel="stylesheet" href="/genre.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Synopsis Predictor</title>
+  <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/smiley-faces/100/Smiley_cool_face-512.png">
+</head>
+<body>
+    <div id="root">
+        <h1>
+            Synopsis to Genre 
+        </h1>
+      <form id="synopsisForm">
+        <textarea name="synopsis" id="synopsis" rows="6" placeholder="Enter synopsis here..."></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+    
+      <h2 id="result" style="color: #ff640a; margin-top: 1.5rem;"><%= prediction || '' %></h2>
+    </div>
+
+  <script>
+
+document.getElementById("synopsisForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Clear previous results
+    document.getElementById("result").innerHTML = "";
+
+    const synopsis = document.getElementById("synopsis").value;
+
+    const response = await fetch("/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ synopsis })
+    });
+
+    const data = await response.json();
+    console.log(data.message);
+
+    let predictions = document.createElement('div');
+    predictions.classList.add('prediction');
+
+    let exception = 0;
+
+    for (const property in data.message) {
+        if (data.message[property] == 0) continue;
+
+        const value = data.message[property];
+        const upperProp = property.toUpperCase();
+
+        if (upperProp === "HORROR" || upperProp === "THRILLER") {
+            exception += value;
+            continue;
+        }
+
+        let ele = document.createElement('ul');
+        ele.innerText = `${upperProp} is ${value}`;
+        predictions.appendChild(ele);
+    }
+
+    if (exception > 0) {
+        let ele = document.createElement('ul');
+        ele.innerText = `HORROR / THRILLER is ${exception / 2}`;
+        predictions.appendChild(ele);
+    }
+
+    document.getElementById("result").appendChild(predictions);
+});
+
+
+
+  // Submit on Enter (without Shift)
+  document.getElementById("synopsis").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // prevent newline
+      document.getElementById("synopsisForm").dispatchEvent(new Event("submit"));
+    }
+  });
+</script>
+
+
+</body>
+</html>
