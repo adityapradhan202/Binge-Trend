@@ -45,7 +45,8 @@ def base_train_eval(models, X, y, tsize=0.20, rstate=45,
         complete_res: default value is True, if true then it displays the results of all the algorithms.
     Returns:
         max_p: max performer, or the best performing algorithm.
-        max_a: accuracy score of the max_p.
+
+        max_a: accuracy of the max performer
     """
     
     eval_res = {} # Results of evaluation process

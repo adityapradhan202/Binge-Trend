@@ -171,20 +171,6 @@ if __name__ == "__main__":
     for ind, mod in enumerate(filt_models):
         print(f"Here's model number - {ind + 1}")
         print(mod)
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-    
 
 
 
