@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Matches</title>
+  <link rel="stylesheet" href="/movie.css">
+  <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/smiley-faces/100/Smiley_cool_face-512.png">
+
+</head>
+<body>
+  <header>
+    <h1>Matched Movies</h1>
+  </header>
+
+  <section class="form-section">
+    <form action="/Synopsis_to_Movie" method="POST">
+      <textarea name="synopsis" placeholder="Enter movie synopsis..." required></textarea>
+      <button type="submit">Find Matching Movies</button>
+    </form>
+  </section>
+
+  <div class="container">
+    <% if (movies && movies.length > 0) { %>
+      <% movies.forEach((movie) => { %>
+        <div class="card">
+          <img src="<%= movie.poster_url %>" alt="Movie Poster" />
+          <h2><%= movie.title %></h2>
+          <p><strong>Year:</strong> <%= movie.released_year %></p>
+          <p><strong>Runtime:</strong> <%= movie.runtime %></p>
+          <p><strong>IMDB Rating:</strong> <%= movie.imdb_rating %></p>
+          <div class="genres">
+            <strong>Genres:</strong>
+            <div class="genre-bar">
+              <% Object.entries(movie.genres).forEach(([genre, score]) => { %>
+                <% if (score > 0) { %>
+                  <span class="genre-chip"><%= genre %>: <%= score.toFixed(1) %>%</span>
+                <% } %>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p style="color: white;">No movies found.</p>
+    <% } %>
+  </div>
+</body>
+</html>

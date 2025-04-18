@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Synopsis Genre Predictor</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/smiley-faces/100/Smiley_cool_face-512.png">
+</head>
+<body>
+  <div class="container">
+    <div class="slides">
+      
+      <!-- Slide 1: Intro -->
+      <div class="slide">
+        <header>Binge Trend</header>
+        <div class="homepage">
+          <p>Welcome to <span class="highlight">BingeTRend</span> — your personal movie matchmaker!</p>
+          <p>Discover your next favorite movie with just a plot or idea. We'll analyze it and match the best titles for you.</p>
+          <p><span class="highlight">How it works:</span></p>
+          <ul>
+            <li><span class="highlight">Movie by Plot:</span> Type a story or idea, we suggest movies.</li>
+            <li><span class="highlight">Genre Breakdown:</span> Get a genre percentage overview for each result.</li>
+          </ul>
+          <p><span class="highlight">Tech Stack:</span></p>
+          <ul>
+            <li><span class="highlight">Scikit-learn</span>, <span class="highlight">SpaCy</span>, and <span class="highlight">NLP</span> for smart analysis.</li>
+            <li><span class="highlight">Express.js and Ejs</span> for backend power.</li>
+          </ul>
+          <p>Let the binge begin. 🍿</p>
+        </div>
+      </div>
+
+      <!-- Slide 2: Navigation and Movie Banner -->
+      <div class="slide">
+        <div class="category">
+          <div class="main_com">
+            <div class="comp">All</div>
+            <div class="comp" onclick="location.href='/Synopsis_to_Movie'" style="user-select: none;">Synopsis to Movie</div>
+            <div class="comp" onclick="location.href='/Synopsis_to_Genre'" style="user-select: none;">Synopsis to Genre</div>
+          </div>
+        </div>
+
+
+          <div class="movie-banner-container">
+            <div class="temp">Movies</div>
+            <div class="movie-banner-wrapper">
+              <!-- First set of movies -->
+              <div class="movie-banner">
+                  <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0111161/?ref_=chttp_t_1'">
+                    <img src="/assets/shawshank_redemption_ver1.jpg" alt="The Shawshank Redemption">
+                    <p>
+                      The Shawshank Redemption
+                    </p>
+                  </div>
+                  <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0068646/?ref_=chttp_t_2'">
+                    <img src="/assets/godfather.jpg" alt="The Godfather">
+                    <p>
+                      The Godfather
+                    </p>
+                  </div>
+                  <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0468569/?ref_=chttp_t_3'">
+                    <img src="/assets/theDarkKnight.jpg" alt="The Dark Knight">
+                    <p>
+                      The Dark Knight
+                    </p>
+                  </div>
+                  <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0050083/?ref_=chttp_t_5'">
+                    <img src="/assets/12_angry_men.jpg" alt="12 Angry Men">
+                    <p>
+                      12 Angry Men
+                    </p>
+                  </div>
+                  <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0137523/?ref_=chttp_t_13'">
+                    <img src="/assets/FightClub.jpg" alt="Fight Club">
+                    <p>
+                      Fight Club
+                    </p>
+                  </div> 
+              </div>
+              <!-- Duplicate set of movies for continuous scroll -->
+              <div class="movie-banner">
+                <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0111161/?ref_=chttp_t_1'">
+                  <img src="/assets/shawshank_redemption_ver1.jpg" alt="The Shawshank Redemption">
+                  <p>
+                    The Shawshank Redemption
+                  </p>
+                </div>
+                <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0068646/?ref_=chttp_t_2'">
+                  <img src="/assets/godfather.jpg" alt="The Godfather">
+                  <p>
+                    The Godfather
+                  </p>
+                </div>
+                <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0468569/?ref_=chttp_t_3'">
+                  <img src="/assets/theDarkKnight.jpg" alt="The Dark Knight">
+                  <p>
+                    The Dark Knight
+                  </p>
+                </div>
+                <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0050083/?ref_=chttp_t_5'">
+                  <img src="/assets/12_angry_men.jpg" alt="12 Angry Men">
+                  <p>
+                    12 Angry Men
+                  </p>
+                </div>
+                <div class="banner" onclick="location.href='https://www.imdb.com/title/tt0137523/?ref_=chttp_t_13'">
+                  <img src="/assets/FightClub.jpg" alt="Fight Club">
+                  <p>
+                    Fight Club
+                  </p>
+                </div> 
+            </div>
+            </div>
+          </div>
+
+          <div class="movie-banner-container">
+            <div class="temp">Anime</div>
+            <div class="movie-banner-wrapper">
+              <!-- First set of movies -->
+              <div class="movie-banner">
+                <div class="banner">
+                  <img src="/assets/Demon_Slayer.jpg" alt="Demon Slayer" onclick="location.href='https://www.imdb.com/title/tt9335498/'">
+                  <p>
+                    Demon Slayer
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/Naruto.webp" alt="Naruto" onclick="location.href='https://www.imdb.com/title/tt0409591/'">
+                  <p>
+                    Naruto
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/onePiece.jpg" alt="onePiece Slayer" onclick="location.href='https://www.imdb.com/title/tt0388629/'">
+                  <p>
+                    One Piece
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/jjk.jpg" alt="jujutsu kaisen" onclick="location.href='https://www.imdb.com/title/tt12343534/'">
+                  <p>
+                    jujutsu kaisen
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/chainsaw.jpg" alt="chainsaw" onclick="location.href='https://www.imdb.com/title/tt13616990/'">
+                  <p>
+                    Chainsaw
+                  </p>  
+                </div>
+                <div class="banner">
+                  <img src="/assets/BLue_lock.jpg" alt="BLue_lock" onclick="location.href='https://www.imdb.com/title/tt15222080/'">
+                  <p>
+                    Blue Lock
+                  </p>
+                </div>
+                
+              </div>
+              <!-- Duplicate set of movies for continuous scroll -->
+              <div class="movie-banner">
+                <div class="banner">
+                  <img src="/assets/Demon_Slayer.jpg" alt="Demon Slayer" onclick="location.href='https://www.imdb.com/title/tt9335498/'">
+                  <p>
+                    Demon Slayer
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/Naruto.webp" alt="Naruto" onclick="location.href='https://www.imdb.com/title/tt0409591/'">
+                  <p>
+                    Naruto
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/onePiece.jpg" alt="onePiece Slayer" onclick="location.href='https://www.imdb.com/title/tt0388629/'">
+                  <p>
+                    One Piece
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/jjk.jpg" alt="jujutsu kaisen" onclick="location.href='https://www.imdb.com/title/tt12343534/'">
+                  <p>
+                    jujutsu kaisen
+                  </p>
+                </div>
+                <div class="banner">
+                  <img src="/assets/chainsaw.jpg" alt="chainsaw" onclick="location.href='https://www.imdb.com/title/tt13616990/'">
+                  <p>
+                    Chainsaw
+                  </p>  
+                </div>
+                <div class="banner">
+                  <img src="/assets/BLue_lock.jpg" alt="BLue_lock" onclick="location.href='https://www.imdb.com/title/tt15222080/'">
+                  <p>
+                    Blue Lock
+                  </p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="buttons">
+      <button class="btn btn-back" onclick="prevSlide()">Back</button>
+      <button class="btn btn-next" onclick="nextSlide()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    let currentSlide = 0;
+
+    function updateSlide() {
+      slides.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+  </script>
+</body>
+</html>
