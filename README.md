@@ -8,6 +8,11 @@ Either type an imaginary plot to get the best match, or select a movie and get s
 [img](img1_link)
 [img](img2_link)
 
+### Working of recommendation system:
+![working]()
+Custom ensembled model is designed and trained so that we can overcome the problem of having very limited amount of data for training.
+For searching similar movies, content based filtering has been used using the concept of **Cosine Similarity**.
+
 ### How to run it on the local machine?
 1. Clone the repository using the command `git clone https://github.com/adityapradhan202/Grimoire-Guide.git`
 2. Open a new terminal in the project folder and type this command:  
@@ -24,12 +29,13 @@ powershell -ExecutionPolicy Bypass -Command "npm install"
 This will install all the packages required for the web application.
 6. Now open two separate terminals, run the scripts [app.py]() and [app2.py]() seperately to run the Flask APIs.
 7. To run the web application run `node index.js` in a terminal.
-8. Now the web is ready to use! Enjoy searching the movies and webseries of your type.**
+8. Now the web is ready to use! Enjoy searching the movies and webseries of your type.
 
 ### Data collection:
 Data has been collected from [Rotten tomatoes](https://www.rottentomatoes.com/) and [IMDB](https://www.imdb.com/). Synopsis and plot of over 600 movies and webseries have been collected.
 
-### Working of recommendation system:
+### Further improvements:
+Neural networks can be used on big datasets to get better classification model. Pretrained models can be used to leverage the power of transfer learning, to get better results in less amount of data.
 
 
 
