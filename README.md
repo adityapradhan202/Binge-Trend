@@ -2,14 +2,13 @@
 A recommendation website using Data Science, Machine Learning, and NLP to suggest movies, web series, anime, and related news. 
 
 ### What does it do?
-Either type an imaginary plot to get the best match, or select a movie and get similar movies, **with percentage of every single genre present in it.
+Either type an imaginary plot to get the best match, or select a movie and get similar movies, **with percentage of every single genre present in it**.
 
-### Website images:
-[img](img1_link)
-[img](img2_link)
+### Website's Frontend User Interface:
+![img](https://raw.githubusercontent.com/adityapradhan202/Binge-Trend/refs/heads/main/project_imgs/app_img.png)
 
 ### Working of recommendation system:
-![working]()
+![working](https://raw.githubusercontent.com/adityapradhan202/Binge-Trend/refs/heads/main/project_imgs/fusinator_explaination.png)
 Custom ensembled model is designed and trained so that we can overcome the problem of having very limited amount of data for training.
 For searching similar movies, content based filtering has been used using the concept of **Cosine Similarity**.
 
@@ -27,7 +26,7 @@ python -m spacy download en_core_web_lg
 powershell -ExecutionPolicy Bypass -Command "npm install"
 ```  
 This will install all the packages required for the web application.
-6. Now open two separate terminals, run the scripts [app.py]() and [app2.py]() seperately to run the Flask APIs.
+6. Now open two separate terminals, run the scripts [app.py](https://github.com/adityapradhan202/Binge-Trend/blob/main/Flask_api/app.py) and [app2.py](https://github.com/adityapradhan202/Binge-Trend/blob/main/Flask_api/app2.py) seperately to run the Flask APIs.
 7. To run the web application run `node index.js` in a terminal.
 8. Now the web is ready to use! Enjoy searching the movies and webseries of your type.
 
