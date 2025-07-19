@@ -21,14 +21,14 @@ For searching similar movies, content based filtering has been used using the co
 python -m spacy download en_core_web_lg
 ```
 4. Nodejs with npm should be installed in your computer.
-5. Now open a new terminal and run `npm install`. If you are encountering an error even after installing nodejs and npm properly, the problem might be the execution policy of the windows powershell. To bypass and run npm install command, type this the windows powershell:
+5. Now open a new terminal and run `npm install`. If you are encountering an error even after installing nodejs and npm properly, the problem might be the execution policy of the windows powershell. To bypass and run npm install command, type this the windows powershell:  
 ```
 powershell -ExecutionPolicy Bypass -Command "npm install"
 ```  
-This will install all the packages required for the web application.
-6. Now open two separate terminals, run the scripts [app.py](https://github.com/adityapradhan202/Binge-Trend/blob/main/Flask_api/app.py) and [app2.py](https://github.com/adityapradhan202/Binge-Trend/blob/main/Flask_api/app2.py) seperately to run the Flask APIs.
-7. To run the web application run `node index.js` in a terminal.
-8. Now the web is ready to use! Enjoy searching the movies and webseries of your type.
+This will install all the packages required for the web application.  
+6. Now open two separate terminals, run the scripts [app.py](https://github.com/adityapradhan202/Binge-Trend/blob/main/Flask_api/app.py) and [app2.py](https://github.com/adityapradhan202/Binge-Trend/blob/main/Flask_api/app2.py) seperately to run the Flask APIs.  
+7. To run the web application run `node index.js` in a terminal.  
+8. Now the web is ready to use! Enjoy searching the movies and webseries of your type.  
 
 ### Data collection:
 Data has been collected from [Rotten tomatoes](https://www.rottentomatoes.com/) and [IMDB](https://www.imdb.com/). Synopsis and plot of over 600 movies and webseries have been collected.
